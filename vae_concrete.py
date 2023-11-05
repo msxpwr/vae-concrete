@@ -1,9 +1,12 @@
 import numpy as np
 
+from tensorflow.python.framework.ops import disable_eager_execution
+disable_eager_execution()
+
 from keras.layers import Input, Dense, Lambda, Flatten, Reshape, Concatenate
 from keras.layers import Conv2D, Conv2DTranspose
 from keras.models import Model
-from keras.optimizers import RMSprop
+from tensorflow.keras.optimizers import RMSprop
 from keras import backend as K
 from keras.losses import binary_crossentropy
 from util import (kl_normal, kl_discrete, sampling_normal,
