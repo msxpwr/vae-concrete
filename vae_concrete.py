@@ -1,12 +1,11 @@
 import numpy as np
 
-from keras.layers import Input, Dense, Lambda, Flatten, Reshape, merge
+from keras.layers import Input, Dense, Lambda, Flatten, Reshape, Concatenate
 from keras.layers import Conv2D, Conv2DTranspose
-from keras.layers.merge import Concatenate
 from keras.models import Model
 from keras.optimizers import RMSprop
 from keras import backend as K
-from keras.objectives import binary_crossentropy
+from keras.losses import binary_crossentropy
 from util import (kl_normal, kl_discrete, sampling_normal,
                   sampling_concrete, plot_digit_grid, EPSILON)
 
