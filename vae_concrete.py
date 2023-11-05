@@ -117,7 +117,7 @@ class VAE():
         # Generator
         # Instantiate generator layers to be able to sample from latent
         # distribution later
-        out_shape = (self.input_shape[0] / 2, self.input_shape[1] / 2, self.filters[2])
+        out_shape = (int(self.input_shape[0] / 2), int(self.input_shape[1] / 2), int(self.filters[2]))
         G_0 = Dense(self.hidden_dim, activation='relu')
         G_1 = Dense(np.prod(out_shape), activation='relu')
         G_2 = Reshape(out_shape)
